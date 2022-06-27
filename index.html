@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css"> -->
+    <title>Result Tree</title>
+    <script src="./assets/js/tailwind.js"></script>
+</head>
+<body>
+
+    <div class=" p-4">
+        <img src="/assets/images/logo.png" alt="logo" style="width: 630px; height:180px;" class=" h-44 container mx-auto p-">
+    </div>
+
+    <div class=" pt-12 flex justify-center item-center">
+        
+    <input type="text" onkeyup="setNewSearchTerm(event)" class="w-4/12 border-2 p-4 rounded-full border-gray-300 " placeholder="Enter your search term">
+    </div>
+
+    <div class=" flex justify-between item-center mx-auto w-4/12  px-2 pt-2">
+
+        <div>
+            <input class="m-1 cursor-pointer " type="checkbox" name="" id="">
+            <label for="" class="text-gray-500">Exact Match "..."</label>
+        </div>
+
+        <div>
+            <input class="m-1 cursor-pointer" type="checkbox" name="" id="">
+            <label for="" class="text-gray-500">Paranthesis (...)</label>
+        </div>
+    </div>
+    
+    <div class="flex justify-center mt-10 space-x-1 item-center mx-auto w-7/12  px-2 pt-2">
+        
+        <div 
+            onclick="searchGoogle()"
+            class="border-2 transition-all duration-500 border-black p-1 px-3 rounded-md hover:bg-gray-200 cursor-pointer ">Google</div>
+        <div
+            onclick="searchYoutube()"
+            class="border-2 transition-all duration-500 border-black p-1 px-3 rounded-md hover:bg-gray-200 cursor-pointer ">Youtube</div>
+        <div 
+            onclick="searchFacebook()"
+            class="border-2  transition-all duration-500 border-black p-1 px-3 rounded-md hover:bg-gray-200 cursor-pointer ">Facebook</div>
+        <div 
+            onclick="searchTwitter()"
+            class="border-2  transition-all duration-500 border-black p-1 px-3 rounded-md hover:bg-gray-200 cursor-pointer ">Twitter</div>
+        <div 
+            onclick="searchInstagram()"
+            class="border-2 transition-all duration-500  border-black p-1 px-3 rounded-md hover:bg-gray-200 cursor-pointer ">Instagram</div>
+        <div 
+            onclick="searchReddit()"
+            class="border-2  transition-all duration-500 border-black p-1 px-3 rounded-md hover:bg-gray-200 cursor-pointer ">Reddit</div>
+        <div
+            onclick="searchQuora()"
+            class="border-2  transition-all duration-500 border-black p-1 px-3 rounded-md hover:bg-gray-200 cursor-pointer ">Quora</div>
+        <div 
+            onclick="searchAmazon()"
+            class="border-2  transition-all duration-500 border-black p-1 px-3 rounded-md hover:bg-gray-200 cursor-pointer ">Amazon</div>
+        <div 
+            onclick="searchAll()"
+            class="border-2 transition-all duration-500  border-black p-1 px-3 rounded-md hover:bg-gray-200 cursor-pointer ">Open all</div>
+
+    </div>
+    
+    <script>
+
+        var searchTerm = "";
+        function setNewSearchTerm(event){
+            searchTerm = event.target.value;
+        }
+        function searchGoogle(){
+            window.open("https://www.google.com/search?q="+''+searchTerm);
+        }
+        function searchYoutube(){
+            window.open("https://www.youtube.com/results?search_query="+''+searchTerm);
+        }
+        function searchFacebook(){
+            window.open("https://www.facebook.com/search/top?q="+''+searchTerm);
+        }
+        function searchTwitter(){
+            window.open("https://twitter.com/search?q="+''+searchTerm);
+        }
+        function searchInstagram(){
+            window.open("https://www.instagram.com/explore/search/keyword/?q="+''+searchTerm);
+        }
+        function searchReddit(){
+            window.open("https://www.reddit.com/search/?q="+''+searchTerm);
+        }
+        function searchQuora(){
+            window.open("https://www.quora.com/search?q="+''+searchTerm);
+        }
+        function searchAmazon(){
+            window.open("https://www.amazon.com/s?k="+''+searchTerm);
+        }
+        function searchAll(){
+            window.open(searchGoogle());
+            window.open(searchYoutube());
+            window.open(searchFacebook());
+            window.open(searchTwitter());
+            window.open(searchInstagram());
+            window.open(searchReddit());
+            window.open(searchQuora());
+            window.open(searchAmazon());
+        }
+    </script>
+
+</body>
+</html>
